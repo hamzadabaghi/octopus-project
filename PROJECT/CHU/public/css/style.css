@@ -1,0 +1,385 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+@font-face{
+  src: url("/fonts/Poppins-Medium.ttf");
+	font-family: pop;
+}
+
+body {
+  overflow: hidden;
+  font-family: pop;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-transition: "color 9999s ease-out, background-color 9999s ease-out";
+  -webkit-transition-delay: 9999s;
+}
+
+.wave {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  z-index: -1;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 7rem;
+  padding: 0 2rem;
+}
+
+.img {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.login-content {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+}
+
+.img img {
+  width: 500px;
+}
+
+form {
+  width: 360px;
+}
+
+.login-content img {
+  height: 100px;
+}
+
+.login-content h2 {
+  margin: 15px 0;
+  color: #333;
+  text-transform: uppercase;
+  font-size: 2.9rem;
+}
+
+.login-content .input-div {
+  position: relative;
+  display: grid;
+  grid-template-columns: 7% 93%;
+  margin: 25px 0;
+  padding: 5px 0;
+  border-bottom: 2px solid #d9d9d9;
+  font-weight: 200;
+}
+
+.login-content .input-div.one {
+  margin-top: 0;
+}
+
+.i {
+  color: #d9d9d9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.i i {
+  transition: 0.3s;
+}
+
+.input-div > div {
+  position: relative;
+  height: 45px;
+}
+
+.input-div > div > h5 {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #999;
+  font-size: 18px;
+  transition: 0.3s;
+  font-weight: 550;
+}
+
+.input-div:before,
+.input-div:after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  width: 0%;
+  height: 2px;
+  background-color: #2e9fd1;
+  transition: 0.4s;
+}
+
+.input-div:before {
+  right: 50%;
+}
+
+.input-div:after {
+  left: 50%;
+}
+
+.input-div.focus:before,
+.input-div.focus:after {
+  width: 50%;
+}
+
+.input-div.focus > div > h5 {
+  top: -5px;
+  font-size: 15px;
+}
+
+.input-div.focus > .i > i {
+  color: #2e9fd1;
+}
+
+.input-div > div > input {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  background: none;
+  padding: 0.5rem 0.7rem;
+  font-size: 1.2rem;
+  color: #555;
+  font-family: pop;
+}
+
+.input-div.pass {
+  margin-bottom: 4px;
+}
+
+a {
+  display: block;
+  text-align: right;
+  text-decoration: none;
+  color: #999;
+  font-size: 0.9rem;
+  transition: 0.3s;
+}
+
+a:hover {
+  color: #2e9fd1;
+}
+
+.btn {
+  display: block;
+  width: 100%;
+  height: 50px;
+  border-radius: 25px;
+  outline: none;
+  border: none;
+  background-image: linear-gradient(to right, #2e9fd1, #43aede, #2e9fd1);
+  background-size: 200%;
+  font-size: 1.2rem;
+  color: #fff;
+  font-family: pop;
+  text-transform: uppercase;
+  margin: 1rem 0;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.btn:hover {
+  background-position: right;
+}
+
+
+/* ---------------------------------------------------
+  ALERT
+----------------------------------------------------- */
+
+
+
+* {
+  box-sizing: border-box;
+}
+/**
+* This can be extended to anything to make it get slightly bigger on hover,
+* which is a pretty commonly desired effect
+*/
+.big-on-hover {
+  transform: scale(1, 1);
+}
+.big-on-hover:hover {
+  transform: scale(1.2, 1.2);
+}
+
+/**
+* Reusable single-direction margin declaration
+*/
+.margin, p, .flag {
+  margin-top: 0;
+  margin-bottom: 24px;
+}
+.margin:last-child, p:last-child, .flag:last-child {
+  margin-bottom: 0;
+}
+
+/**
+* Flag Object
+* Original Source: http://csswizardry.com/2013/05/the-flag-object/
+*/
+.flag {
+  display: table;
+  width: 100%;
+}
+
+.flag__image,
+.flag__body {
+  display: table-cell;
+  vertical-align: middle;
+}
+.flag--top .flag__image, .flag--top
+.flag__body {
+  vertical-align: top;
+}
+.flag--bottom .flag__image, .flag--bottom
+.flag__body {
+  vertical-align: bottom;
+}
+
+.flag__image {
+  padding-right: 24px;
+}
+.flag__image > img {
+  display: block;
+  max-width: none;
+}
+.flag--rev .flag__image {
+  padding-right: 0;
+  padding-left: 24px;
+}
+
+.flag__body {
+  width: 100%;
+}
+
+/**
+* Notification Styles
+*/
+.note {
+  position: relative;
+  overflow: hidden;
+  color: white;
+  background-color: #E91E63;
+}
+
+.note--secondary {
+  background-color: #263238;
+}
+
+.note--success {
+  background-color: #4CAF50;
+}
+
+.note--warning {
+  background-color: #FFC107;
+}
+
+.note--error {
+  background-color: #d50000;
+}
+
+.note--info {
+  background-color: #03A9F4;
+}
+
+.note__icon,
+.note__text {
+  padding: 24px;
+}
+
+.note__icon {
+  min-width: 80px;
+  text-align: center;
+  font-size: 32px;
+  font-size: 2rem;
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+.note__text {
+  padding-right: 48px;
+}
+
+.note__close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 29px;
+  line-height: 30px;
+  font-size: 24px;
+  text-align: center;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.25);
+  opacity: 0;
+  transition: all 0.25s;
+}
+.note__close:hover {
+  background-color: rgba(0, 0, 0, 0.15);
+  color: white;
+}
+.note:hover .note__close {
+  opacity: 1;
+}
+
+
+
+/* ---------------------------------------------------
+  MEDIAQUERIES
+----------------------------------------------------- */
+
+
+@media screen and (max-width: 1050px) {
+  .container {
+    grid-gap: 5rem;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  form {
+    width: 290px;
+  }
+
+  .login-content h2 {
+    font-size: 2.4rem;
+    margin: 8px 0;
+  }
+
+  .img img {
+    width: 400px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+
+  .img {
+    display: none;
+  }
+
+  .wave {
+    display: none;
+  }
+
+  .login-content {
+    justify-content: center;
+  }
+}
+
